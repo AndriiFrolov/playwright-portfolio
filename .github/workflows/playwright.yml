@@ -4,6 +4,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  repository_dispatch:
+    types: [test_result]
+    
 jobs:
   test:
     timeout-minutes: 60
