@@ -1,14 +1,15 @@
-name: Playwright Tests
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
+name: 'RunTests'
+description: 'Execute Playwright tests'
+inputs:
+  proj:  # id of input
+    description: 'Project'
+    required: false
+    default: '--chromium'
+
+runs:
+  using: "node16"
+  main:
+  steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
