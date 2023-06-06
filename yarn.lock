@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@axe-core/playwright@^4.6.0":
+  version "4.7.2"
+  resolved "https://registry.npmjs.org/@axe-core/playwright/-/playwright-4.7.2.tgz"
+  integrity sha512-k5f6KGVkPsZ7wR56XnRZYS4b1Wd8wkVTpjqeScFYZMTJxKVv3FGKoBqQVBoCphWtP0oMWQc41zQgHO6gaYTcQw==
+  dependencies:
+    axe-core "^4.7.0"
+
 "@playwright/test@^1.34.3":
   version "1.34.3"
   resolved "https://registry.npmjs.org/@playwright/test/-/test-1.34.3.tgz"
@@ -24,6 +31,11 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-20.2.5.tgz"
   integrity sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==
 
+axe-core@^4.7.0:
+  version "4.7.2"
+  resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.7.2.tgz"
+  integrity sha512-zIURGIS1E1Q4pcrMjp+nnEh+16G56eG/MUllJH8yEvw7asDo7Ac9uhC9KIH5jzpITueEZolfYglnCGIuSBz39g==
+
 dotenv@*, dotenv@^16.0.3:
   version "16.1.4"
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.1.4.tgz"
@@ -34,7 +46,7 @@ fsevents@2.3.2:
   resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-playwright-core@1.34.3:
+"playwright-core@>= 1.0.0", playwright-core@1.34.3:
   version "1.34.3"
   resolved "https://registry.npmjs.org/playwright-core/-/playwright-core-1.34.3.tgz"
   integrity sha512-2pWd6G7OHKemc5x1r1rp8aQcpvDh7goMBZlJv6Co5vCNLVcQJdhxRL09SGaY6HcyHH9aT4tiynZabMofVasBYw==

@@ -7,7 +7,7 @@ test.describe(`Books tests`, () => {
     await bookStorePage.verifyPageOpened();
   });
 
-  test("should be able to see a book summary", async ({ testDataProvider, bookStorePage }) => {
+  test("should be able to see a book summary @smoke", async ({ testDataProvider, bookStorePage }) => {
     const bookForTest = testDataProvider.getBook();
     await bookStorePage.getBookRow(0).verifyBook(bookForTest);
   });
