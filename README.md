@@ -35,15 +35,21 @@ All tests in headed mode (to see browser):
 npx playwright test --headed
 ```
 
-Functional tests:
-```
-npx playwright test --functional/
-```
-
 A11 tests:
 ```
-npx playwright test --a11/
+npx playwright test --grep=a11/
 ```
+
+Functional tests:
+```
+npx playwright test --grep=functional/
+```
+
+Smoke suite tests:
+```
+npx playwright test --grep=@smoke
+```
+
 
 
 
