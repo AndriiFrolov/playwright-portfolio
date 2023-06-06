@@ -25,15 +25,6 @@ export class A11ReportBuilder {
     await expect.soft(accessibilityScanResults.violations).toEqual([]);
   }
 
-//   async scanWith(axe: AxeBuilder) {
-//     const accessibilityScanResults = await axe.analyze();
-//     this.attachResults("passed", JSON.stringify(accessibilityScanResults.passes));
-//     if (accessibilityScanResults.violations.length > 0) {
-//       this.attachResults("violations", JSON.stringify(accessibilityScanResults.violations));
-//     }
-//     await expect.soft(accessibilityScanResults.violations).toEqual([]);
-//   }
-
   private attachResults(filename: string, scanResultsJson: string) {
     const htmlContent = this.jsonToHtmlTable(scanResultsJson);
     const filePath = this.saveHtmlToFile(`${filename}.html`, htmlContent);
