@@ -8,5 +8,46 @@ Sample framework structure including:
 - Test data approach (just a sample, actual one strongly depends on project needs)
 - Execution against different browsers
 - Github actions flow to execute tests upon pull request
+- Accessibility testing (A11)
 
 Tests are writtent against Sample book store https://demoqa.com/books
+
+Playwright documentation: https://playwright.dev/docs/intro 
+
+## Prerequisites
+1. Install Playwright
+
+```shell 
+npm install 
+npx install playwright
+```
+
+2. (Optional) For better experience install following plugin for Visual studio code - ‘Playwright Test for VSCode’
+
+## Run tests from command line
+All tests:
+```
+npx playwright test
+```
+
+All tests in headed mode (to see browser):
+```
+npx playwright test --headed
+```
+
+Functional tests:
+```
+npx playwright test --functional/
+```
+
+A11 tests:
+```
+npx playwright test --a11/
+```
+
+
+
+## Accessibility testing (A11)
+Test example: https://github.com/AndriiFrolov/playwright-portfolio/tree/master/tests/a11/books_a11.spec.ts
+
+Custom test report attached to each failed a11 test
