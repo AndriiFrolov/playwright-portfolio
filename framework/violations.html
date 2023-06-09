@@ -1,0 +1,53 @@
+<table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Help</th>
+      <th>Help URL</th>
+      <th>Impact</th>
+      <th>Tags</th>
+      <th>Details</th>
+    </tr><tr>
+     <td>color-contrast</td>
+      <td>Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</td>
+      <td>Elements must meet minimum color contrast ratio thresholds</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/color-contrast?application=playwright</td>
+      <td>serious</td>
+      <td>cat.color, wcag2aa, wcag143, ACT, TTv5, TT13.c</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;color-contrast&quot;,
+        &quot;data&quot;: {
+          &quot;fgColor&quot;: &quot;#ffffff&quot;,
+          &quot;bgColor&quot;: &quot;#007bff&quot;,
+          &quot;contrastRatio&quot;: 3.97,
+          &quot;fontSize&quot;: &quot;12.0pt (16px)&quot;,
+          &quot;fontWeight&quot;: &quot;normal&quot;,
+          &quot;messageKey&quot;: null,
+          &quot;expectedContrastRatio&quot;: &quot;4.5:1&quot;
+        },
+        &quot;relatedNodes&quot;: [
+          {
+            &quot;html&quot;: &quot;&lt;button id=\&quot;submit\&quot; type=\&quot;button\&quot; class=\&quot;btn btn-primary\&quot;&gt;Log out&lt;/button&gt;&quot;,
+            &quot;target&quot;: [
+              &quot;#submit&quot;
+            ]
+          }
+        ],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Element has insufficient color contrast of 3.97 (foreground color: #ffffff, background color: #007bff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: &quot;serious&quot;,
+    &quot;html&quot;: &quot;&lt;button id=\&quot;submit\&quot; type=\&quot;button\&quot; class=\&quot;btn btn-primary\&quot;&gt;Log out&lt;/button&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#submit&quot;
+    ],
+    &quot;failureSummary&quot;: &quot;Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #ffffff, background color: #007bff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1&quot;
+  }
+]</pre></td>
+      </tr></table>

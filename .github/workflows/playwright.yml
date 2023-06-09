@@ -1,31 +1,65 @@
 name: Playwright Tests
+
 on:
   workflow_dispatch:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
-  repository_dispatch:
-    types: [test_result]
-    
+    branches: [main, master]
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test --grep=@smoke
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test --grep=@smoke
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Publish JUnit Test Report
+        uses: mikepenz/action-junit-report@v3
+        if: success() || failure()
+        with:
+          report_paths: "outcome/test-results/results.xml"
+
+      - name: Install xmlstarlet
+        if: always()
+        run: sudo apt-get install xmlstarlet
+
+      - name: Parse results.xml
+        if: always()
+        run: |
+          total=$(xmlstarlet sel -t -v "/testsuites/@tests" outcome/test-results/results.xml)
+          failures=$(xmlstarlet sel -t -v "/testsuites/@failures" outcome/test-results/results.xml)
+          skipped=$(xmlstarlet sel -t -v "/testsuites/@skipped" outcome/test-results/results.xml)
+          time=$(xmlstarlet sel -t -v "/testsuites/@time" outcome/test-results/results.xml)
+          
+          echo "total=${total}" >> $GITHUB_ENV
+          echo "failures=${failures}" >> $GITHUB_ENV
+          echo "time=${time}" >> $GITHUB_ENV
+          echo "skipped=${skipped}" >> $GITHUB_ENV
+          passed=$((total - failures))
+          echo "passed=${passed}" >> $GITHUB_ENV
+
+      - name: Slack notification
+        uses: rtCamp/action-slack-notify@v2
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && always()
+        env:
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: "Total tests: ${{ env.total }} Passed: ${{ env.passed }} Failed: ${{ env.failures }} Skipped: ${{ env.skipped }} \nTest report is here: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts"
+          SLACK_TITLE: Test execution completed
+          SLACK_USERNAME: Test automation
+          SLACK_WEBHOOK: ${{ secrets.SLACK_BOT_TOKEN }}

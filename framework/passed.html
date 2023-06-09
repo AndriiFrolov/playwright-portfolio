@@ -1,0 +1,463 @@
+<table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Help</th>
+      <th>Help URL</th>
+      <th>Impact</th>
+      <th>Tags</th>
+      <th>Details</th>
+    </tr><tr>
+     <td>autocomplete-valid</td>
+      <td>Ensure the autocomplete attribute is correct and suitable for the form field</td>
+      <td>autocomplete attribute must be used correctly</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/autocomplete-valid?application=playwright</td>
+      <td></td>
+      <td>cat.forms, wcag21aa, wcag135, ACT</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [],
+    &quot;all&quot;: [
+      {
+        &quot;id&quot;: &quot;autocomplete-valid&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;the autocomplete attribute is correctly formatted&quot;
+      }
+    ],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;input autocomplete=\&quot;off\&quot; placeholder=\&quot;Type to search\&quot; type=\&quot;text\&quot; id=\&quot;searchBox\&quot; class=\&quot;form-control\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>avoid-inline-spacing</td>
+      <td>Ensure that text spacing set through style attributes can be adjusted with custom stylesheets</td>
+      <td>Inline text spacing must be adjustable with custom stylesheets</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/avoid-inline-spacing?application=playwright</td>
+      <td></td>
+      <td>cat.structure, wcag21aa, wcag1412, ACT</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [],
+    &quot;all&quot;: [
+      {
+        &quot;id&quot;: &quot;important-letter-spacing&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Letter-spacing in the style attribute is not set to !important, or meets the minimum&quot;
+      },
+      {
+        &quot;id&quot;: &quot;important-word-spacing&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;word-spacing in the style attribute is not set to !important, or meets the minimum&quot;
+      },
+      {
+        &quot;id&quot;: &quot;important-line-height&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;line-height in the style attribute is not set to !important, or meets the minimum&quot;
+      }
+    ],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;label class=\&quot;form-label\&quot; id=\&quot;userName-label\&quot; style=\&quot;margin-right: 20px;\&quot;&gt;User Name : &lt;/label&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#userName-label&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [],
+    &quot;all&quot;: [
+      {
+        &quot;id&quot;: &quot;important-letter-spacing&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Letter-spacing in the style attribute is not set to !important, or meets the minimum&quot;
+      },
+      {
+        &quot;id&quot;: &quot;important-word-spacing&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;word-spacing in the style attribute is not set to !important, or meets the minimum&quot;
+      },
+      {
+        &quot;id&quot;: &quot;important-line-height&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;line-height in the style attribute is not set to !important, or meets the minimum&quot;
+      }
+    ],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;label class=\&quot;form-label\&quot; color=\&quot;#000000\&quot; id=\&quot;userName-value\&quot; style=\&quot;color: rgb(0, 0, 0); font-weight: 500; margin-right: 20px;\&quot;&gt;andriifrolov&lt;/label&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#userName-value&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>button-name</td>
+      <td>Ensures buttons have discernible text</td>
+      <td>Buttons must have discernible text</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/button-name?application=playwright</td>
+      <td></td>
+      <td>cat.name-role-value, wcag2a, wcag412, section508, section508.22.a, ACT, TTv5, TT6.a</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;button-has-visible-text&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;message&quot;: &quot;Element has inner text that is visible to screen readers&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;button id=\&quot;submit\&quot; type=\&quot;button\&quot; class=\&quot;btn btn-primary\&quot;&gt;Log out&lt;/button&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#submit&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>color-contrast</td>
+      <td>Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</td>
+      <td>Elements must meet minimum color contrast ratio thresholds</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/color-contrast?application=playwright</td>
+      <td>serious</td>
+      <td>cat.color, wcag2aa, wcag143, ACT, TTv5, TT13.c</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;color-contrast&quot;,
+        &quot;data&quot;: {
+          &quot;fgColor&quot;: &quot;#495057&quot;,
+          &quot;bgColor&quot;: &quot;#ffffff&quot;,
+          &quot;contrastRatio&quot;: 8.17,
+          &quot;fontSize&quot;: &quot;12.0pt (16px)&quot;,
+          &quot;fontWeight&quot;: &quot;normal&quot;,
+          &quot;expectedContrastRatio&quot;: &quot;4.5:1&quot;
+        },
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Element has sufficient color contrast of 8.17&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;input autocomplete=\&quot;off\&quot; placeholder=\&quot;Type to search\&quot; type=\&quot;text\&quot; id=\&quot;searchBox\&quot; class=\&quot;form-control\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;color-contrast&quot;,
+        &quot;data&quot;: {
+          &quot;fgColor&quot;: &quot;#212529&quot;,
+          &quot;bgColor&quot;: &quot;#ffffff&quot;,
+          &quot;contrastRatio&quot;: 15.42,
+          &quot;fontSize&quot;: &quot;12.0pt (16px)&quot;,
+          &quot;fontWeight&quot;: &quot;normal&quot;,
+          &quot;expectedContrastRatio&quot;: &quot;4.5:1&quot;
+        },
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Element has sufficient color contrast of 15.42&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;label class=\&quot;form-label\&quot; id=\&quot;userName-label\&quot; style=\&quot;margin-right: 20px;\&quot;&gt;User Name : &lt;/label&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#userName-label&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;color-contrast&quot;,
+        &quot;data&quot;: {
+          &quot;fgColor&quot;: &quot;#000000&quot;,
+          &quot;bgColor&quot;: &quot;#ffffff&quot;,
+          &quot;contrastRatio&quot;: 21,
+          &quot;fontSize&quot;: &quot;12.0pt (16px)&quot;,
+          &quot;fontWeight&quot;: &quot;normal&quot;,
+          &quot;expectedContrastRatio&quot;: &quot;4.5:1&quot;
+        },
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Element has sufficient color contrast of 21&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;label class=\&quot;form-label\&quot; color=\&quot;#000000\&quot; id=\&quot;userName-value\&quot; style=\&quot;color: rgb(0, 0, 0); font-weight: 500; margin-right: 20px;\&quot;&gt;andriifrolov&lt;/label&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#userName-value&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>duplicate-id-active</td>
+      <td>Ensures every id attribute value of active elements is unique</td>
+      <td>IDs of active elements must be unique</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/duplicate-id-active?application=playwright</td>
+      <td></td>
+      <td>cat.parsing, wcag2a, wcag411</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;duplicate-id-active&quot;,
+        &quot;data&quot;: &quot;searchBox&quot;,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Document has no active elements that share the same id attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;input autocomplete=\&quot;off\&quot; placeholder=\&quot;Type to search\&quot; type=\&quot;text\&quot; id=\&quot;searchBox\&quot; class=\&quot;form-control\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;duplicate-id-active&quot;,
+        &quot;data&quot;: &quot;submit&quot;,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Document has no active elements that share the same id attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;button id=\&quot;submit\&quot; type=\&quot;button\&quot; class=\&quot;btn btn-primary\&quot;&gt;Log out&lt;/button&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#submit&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>duplicate-id</td>
+      <td>Ensures every id attribute value is unique</td>
+      <td>id attribute value must be unique</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/duplicate-id?application=playwright</td>
+      <td></td>
+      <td>cat.parsing, wcag2a, wcag411</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;duplicate-id&quot;,
+        &quot;data&quot;: &quot;searchBox-wrapper&quot;,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;minor&quot;,
+        &quot;message&quot;: &quot;Document has no static elements that share the same id attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;div id=\&quot;searchBox-wrapper\&quot; class=\&quot;mt-2 row\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox-wrapper&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;duplicate-id&quot;,
+        &quot;data&quot;: &quot;basic-addon2&quot;,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;minor&quot;,
+        &quot;message&quot;: &quot;Document has no static elements that share the same id attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;span class=\&quot;input-group-text\&quot; id=\&quot;basic-addon2\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#basic-addon2&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;duplicate-id&quot;,
+        &quot;data&quot;: &quot;userName-label&quot;,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;minor&quot;,
+        &quot;message&quot;: &quot;Document has no static elements that share the same id attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;label class=\&quot;form-label\&quot; id=\&quot;userName-label\&quot; style=\&quot;margin-right: 20px;\&quot;&gt;User Name : &lt;/label&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#userName-label&quot;
+    ]
+  },
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;duplicate-id&quot;,
+        &quot;data&quot;: &quot;userName-value&quot;,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;minor&quot;,
+        &quot;message&quot;: &quot;Document has no static elements that share the same id attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;label class=\&quot;form-label\&quot; color=\&quot;#000000\&quot; id=\&quot;userName-value\&quot; style=\&quot;color: rgb(0, 0, 0); font-weight: 500; margin-right: 20px;\&quot;&gt;andriifrolov&lt;/label&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#userName-value&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>form-field-multiple-labels</td>
+      <td>Ensures form field does not have multiple label elements</td>
+      <td>Form field must not have multiple label elements</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/form-field-multiple-labels?application=playwright</td>
+      <td></td>
+      <td>cat.forms, wcag2a, wcag332, TTv5, TT5.c</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [
+      {
+        &quot;id&quot;: &quot;multiple-label&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;moderate&quot;,
+        &quot;message&quot;: &quot;Form field does not have multiple label elements&quot;
+      }
+    ],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;input autocomplete=\&quot;off\&quot; placeholder=\&quot;Type to search\&quot; type=\&quot;text\&quot; id=\&quot;searchBox\&quot; class=\&quot;form-control\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>label-title-only</td>
+      <td>Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes</td>
+      <td>Form elements should have a visible label</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/label-title-only?application=playwright</td>
+      <td></td>
+      <td>cat.forms, best-practice</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [
+      {
+        &quot;id&quot;: &quot;title-only&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Form element does not solely use title attribute for its label&quot;
+      }
+    ],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;input autocomplete=\&quot;off\&quot; placeholder=\&quot;Type to search\&quot; type=\&quot;text\&quot; id=\&quot;searchBox\&quot; class=\&quot;form-control\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>label</td>
+      <td>Ensures every form element has a label</td>
+      <td>Form elements must have labels</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/label?application=playwright</td>
+      <td></td>
+      <td>cat.forms, wcag2a, wcag412, section508, section508.22.n, ACT, TTv5, TT5.c</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;non-empty-placeholder&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Element has a placeholder attribute&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [
+      {
+        &quot;id&quot;: &quot;hidden-explicit-label&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;message&quot;: &quot;Form element has a visible explicit &lt;label&gt;&quot;
+      }
+    ],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;input autocomplete=\&quot;off\&quot; placeholder=\&quot;Type to search\&quot; type=\&quot;text\&quot; id=\&quot;searchBox\&quot; class=\&quot;form-control\&quot;&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#searchBox&quot;
+    ]
+  }
+]</pre></td>
+      </tr><tr>
+     <td>nested-interactive</td>
+      <td>Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies</td>
+      <td>Interactive controls must not be nested</td>
+      <td>https://dequeuniversity.com/rules/axe/4.7/nested-interactive?application=playwright</td>
+      <td></td>
+      <td>cat.keyboard, wcag2a, wcag412, TTv5, TT6.a</td>
+      <td><pre>[
+  {
+    &quot;any&quot;: [
+      {
+        &quot;id&quot;: &quot;no-focusable-content&quot;,
+        &quot;data&quot;: null,
+        &quot;relatedNodes&quot;: [],
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;message&quot;: &quot;Element does not have focusable descendants&quot;
+      }
+    ],
+    &quot;all&quot;: [],
+    &quot;none&quot;: [],
+    &quot;impact&quot;: null,
+    &quot;html&quot;: &quot;&lt;button id=\&quot;submit\&quot; type=\&quot;button\&quot; class=\&quot;btn btn-primary\&quot;&gt;Log out&lt;/button&gt;&quot;,
+    &quot;target&quot;: [
+      &quot;#submit&quot;
+    ]
+  }
+]</pre></td>
+      </tr></table>
