@@ -56,7 +56,7 @@ jobs:
 
       - name: Slack notification
         uses: rtCamp/action-slack-notify@v2
-        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && always()
+        if: always()
         env:
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: "Total tests: ${{ env.total }} Passed: ${{ env.passed }} Failed: ${{ env.failures }} Skipped: ${{ env.skipped }} \nTest report is here: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts"
