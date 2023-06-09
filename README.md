@@ -54,6 +54,10 @@ npx playwright test --grep=@smoke
 
 
 ## Accessibility testing (A11)
+Custom report: https://github.com/AndriiFrolov/playwright-portfolio/blob/master/framework/a11/A11ReportBuilder.ts 
+
 Test example: https://github.com/AndriiFrolov/playwright-portfolio/tree/master/tests/a11/books_a11.spec.ts
 
-Custom test report attached to each failed a11 test
+Note that customization is very simple and Report & Builder injects to the tests using fixtures
+
+Custom test report attached to each failed a11 test as HTML table
