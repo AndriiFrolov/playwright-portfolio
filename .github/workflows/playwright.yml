@@ -59,7 +59,7 @@ jobs:
         if: always()
         env:
           SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: "Total tests: ${{ env.total }} Passed: ${{ env.passed }} Failed: ${{ env.failures }} Skipped: ${{ env.skipped }} \nTest report is <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts|here>"
+          SLACK_MESSAGE: "Total <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts|tests>: ${{ env.total }} Passed: ${{ env.passed }} Failed: ${{ env.failures }} Skipped: ${{ env.skipped }}"
           SLACK_TITLE: Test execution completed
           SLACK_USERNAME: Test automation
           SLACK_WEBHOOK: ${{ secrets.SLACK_BOT_TOKEN }}
