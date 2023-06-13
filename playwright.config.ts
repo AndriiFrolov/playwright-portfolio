@@ -8,6 +8,29 @@ import dotenv from "dotenv";
 dotenv.config(); //test automation specific options, including ENV_FILE_TO_LOAD
 dotenv.config({ path: process.env.ENV_FILE_TO_LOAD }); //environment specific settings like URL
 
+const RPconfig = {
+  token: "E-CnSuwUsPta588RL1fPX1nqhPI",
+  endpoint: "https://demo.reportportal.io/api/v1",
+  project: "default_personal",
+  launch: "Playwright portfolio regression",
+  attributes: [
+    {
+      key: "env",
+      value: process.env.ENV_FILE_TO_LOAD,
+    },
+    {
+      key: "branch",
+      value: getBranchName(),
+    },
+  ],
+  description: "",
+  rerun: false,
+  rerunof: "",
+  mode: "DEFAULT",
+  includeTestSteps: true,
+  includePlaywrightProjectNameToCodeReference: true,
+};
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -22,11 +45,12 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-   reporter: [
-      ["html", { outputFolder: "./outcome/html", open: process.env.CI ? "never" : "on-failure" }],
-      ["line"],
-      ["junit", { outputFile: "./outcome/test-results/results.xml" }],
-    ],
+  reporter: [
+    ["html", { outputFolder: "./outcome/html", open: process.env.CI ? "never" : "on-failure" }],
+    ["line"],
+    ["junit", { outputFile: "./outcome/test-results/results.xml" }],
+    ["@reportportal/agent-js-playwright", RPconfig],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -93,3 +117,10 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+function isCI() {
+  return process.env.CI;
+}
+function getBranchName() {
+  return process.env.BRANCH_NAME === undefined ? "not_set" : process.env.BRANCH_NAME;
+}
