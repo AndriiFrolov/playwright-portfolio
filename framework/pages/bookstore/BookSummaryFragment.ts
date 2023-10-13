@@ -20,7 +20,7 @@ export class BookSummaryFragment extends BaseFragment {
   public async verifyBook(expectedBook: BookDto) {
     await expect.soft(this.avatar).toHaveAttribute("src", expectedBook.image);
     await expect.soft(this.productTitle).toHaveText(expectedBook.title);
-    await expect.soft(this.productTitle).toHaveAttribute("href", `/books?book=${expectedBook.isbn}`);
+    await expect.soft(this.productTitle).toHaveAttribute("href", `/profile?book=${expectedBook.isbn}`);
     await expect.soft(this.author).toHaveText(expectedBook.author);
     await expect.soft(this.publisher).toHaveText(expectedBook.publisher);
   }
