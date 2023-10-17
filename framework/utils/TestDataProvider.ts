@@ -33,4 +33,7 @@ export class TestDataProvider {
     }
     return this.books[0];
   }
+  getRandomInt(max: number): number {
+    return Math.floor(Math.random() * max);
+  }
 }

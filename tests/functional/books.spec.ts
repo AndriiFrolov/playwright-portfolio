@@ -1,5 +1,6 @@
 import { test, expect, extrimelySlowExpect } from "framework/fixtures/ObjectFixture";
 import { BookStorePage } from "framework/pages/bookstore/BookStorePage";
+import { ProfilePage } from "framework/pages/profile/ProfilePage";
 import { NOT_SIGNED_IN_STATE } from "framework/utils/Constants";
 
 test.describe(`Books tests`, () => {
@@ -67,16 +68,15 @@ test.describe(`Books tests`, () => {
     const actualFilteredBookTitles = await bookStorePage.bookTitles.allTextContents();
     expect(JSON.stringify(actualFilteredBookTitles)).toBe(JSON.stringify(expectedFilteredBookTitles));
   })
-  test('Add book to profile', async ({bookStorePage, profilePage}) => {
+  test('Add book to profile', async ({bookStorePage, profilePage, testDataProvider}) => {
     const allBookTitles = await bookStorePage.bookTitles.allTextContents();
-    const bookForTest = allBookTitles[bookStorePage.getRandomInt(allBookTitles.length)];
-    await bookStorePage.getBookLink(bookForTest).click();
+    const bookForTest = allBookTitles[testDataProvider.getRandomInt(allBookTitles.length)];
+    await profilePage.getBookLink(bookForTest).click();
     await bookStorePage.addBookToCollection.click();
     await profilePage.open();
     const profileBookTitles = await bookStorePage.bookTitles.allInnerTexts();
     await expect(profileBookTitles).toContain(bookForTest);
-    const deleteSelector = '//..//..//..//span[@title="Delete"]'
-    await profilePage.getBookLink(bookForTest, deleteSelector).click();
+    await (profilePage.getBookLink(bookForTest)).deleteBtn.click();
     await profilePage.deleteConfirmBtn.click();
     await profilePage.open();
     expect(await bookStorePage.bookTitles.allInnerTexts()).not.toContain(bookForTest);
