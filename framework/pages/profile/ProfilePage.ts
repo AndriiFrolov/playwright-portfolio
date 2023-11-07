@@ -25,5 +25,3 @@ export class ProfilePage extends BasePage {
   }
   
 }
-
-
